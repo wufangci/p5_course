@@ -1,26 +1,25 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
-  x = windowWidth / 2;
-  y = windowHeight / 2;
-  delta = 10;
+  x = 500;
+  y = 500;
+  // delta = 10;
 }
 
 var x, y;
+var ang = 0;
 
 function draw() {
-  // map() 原始值 0 ~ width(畫布範圍) 目前的值 0 ~ 255 (顏色的範圍)
-  // 逼近 lerp(start, stop, amt) amt : 介於 0 ~ 1
-
-  delta = mouseX / 50;
-  x += random(-delta, delta);
-  y += random(-delta, delta);
-  x = lerp(x, mouseX, 0.04); // 跟著 x 逼近移動
-  y = lerp(y, mouseY, 0.04); // 跟著 y 逼近移動
-  var colorR = map(x, 0, windowWidth - 10, 0, 255, true); // 填色依照範圍調整顏色範圍
-  fill(colorR, 5);
-  stroke(5, 2);
-  ellipse(x + 100, y + 100, 200, 200); // random 隨機改變 x,y 位置
-  // stroke(100, 2);
-  // ellipse(x + random(50), y + random(50), 200, 200); // random 隨機改變 x,y 位置
+  for (i = 700; i >= 2; i -= 10) {
+    var time = second();
+    var ang = time / 20;
+    // noStroke();
+    strokeWeight(0.5);
+    var colorR = map(x, 0, i, 0, 100, true); // 填色依照範圍調整顏色範圍
+    stroke(160);
+    fill(colorR, 7);
+    arc(width / 2, height / 2, i, i, 0, ang - i, PIE);
+    if (i % 2 === 0) {
+    }
+  }
 }
