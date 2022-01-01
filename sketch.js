@@ -9,11 +9,12 @@ function draw() {
 
 function mousePressed() {
   // L5 噴灑技巧
-  var count = int(random(5, 15)); // random 取整數
-  var circleSize = random(50, 200);
+  var count = int(random(50, 150)); // random 取整數
+  var circleSize = random(2, 20);
   for (var i = 0; i < count; i++) {
-    fill(random(200), random(220, 255), random(50));
-    ellipse(mouseX + i * 5, mouseY, circleSize); 
+    noStroke();
+    fill(random(255), random(200, 255), random(100, 200));
+    ellipse(mouseX + random(-50, 50), mouseY + random(-50, 50), circleSize);
     circleSize *= 0.9; // 從大畫到小
   }
 }
