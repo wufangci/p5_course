@@ -9,6 +9,7 @@ function draw() {
 }
 
 function circleModel() {
+  // TODO 把指針概念加進去
   for (let i = 0; i < 40; i++) {
     for (let j = 0; j < 5; j++) {
       const colorRange = map(i, 0, 10, 0, 255);
